@@ -12,7 +12,6 @@ done
 
 echo "TypeScript started"
 npm run type-check
-
 if [$? -ne 0]; then
     echo "Type errors was founded"
     exit 1
