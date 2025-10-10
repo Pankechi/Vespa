@@ -1,0 +1,12 @@
+name: Vespa-CI
+run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
+on: [push]
+jobs:
+  unit-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - with:
+          node-version: 'latest'
+      - run: npm install
+      - run: npm run vitest
+        name: running unit tests
