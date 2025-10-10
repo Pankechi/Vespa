@@ -4,6 +4,7 @@ forbidden_branches='main'
 current_branch=$(git branch --show-current)
 error_icon='❌'
 init_icon='🔍'
+ok_icon='✅ '
 
 for branch in $forbidden_branches; do
     if [ "$branch" = "$current_branch" ]; then
@@ -12,9 +13,11 @@ for branch in $forbidden_branches; do
     fi
 done
 
-if [ "$current_branch" =~ '^vespa/(fix|add)-[a-zA-Z0-9_-]+$' ]; then
-  echo "'$error_icon' Branch name is mismatched"
-  exit 1
+if echo "$current_branch" | grep -qE '^vespa/(fix|add)-[a-zA-Z0-9_-]+$'; then
+    echo "'$ok_icon' Branch name is valid"
+else
+    echo "'$error_icon' Branch name is mismatched"
+    exit 1
 fi
 
 echo "'$init_icon' Starting type-check"
