@@ -1,20 +1,25 @@
-#!/bin/sh
-
-echo "test"
+#!/usr/bin/env sh
 
 forbidden_branches='main'
 current_branch=$(git branch --show-current)
+error_icon='❌'
+init_icon='🔍'
 
 for branch in $forbidden_branches; do
     if [ "$branch" = "$current_branch" ]; then
-        echo "❌ Direct commits to main branch are forbidden"
+        echo "'$error_icon' Direct commits to main branch are forbidden"
         exit 1
     fi
 done
 
-echo "🔍 Starting type-check"
+if [ "$current_branch" =~ '^vespa/(fix|add)-[a-zA-Z0-9_-]+$' ]; then
+  echo "'$error_icon' Branch name is mismatched"
+  exit 1
+fi
+
+echo "'$init_icon' Starting type-check"
 npm run type-check
 if [ $? -ne 0 ]; then
-    echo "❌Type errors were found"
+    echo "'$error_icon' Type errors were found"
     exit 1
 fi
