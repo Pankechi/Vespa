@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 
 forbidden_branches='main'
-current_branch=$(git rev-parse --abbrev-ref HEAD)
+current_branch=$(git branch --show-current)
 
 for branch in $forbidden_branches; do
     if [$branch == $current_branch]; then
