@@ -5,8 +5,9 @@ jobs:
   unit-tests:
     runs-on: ubuntu-latest
     steps:
-      - with:
-          node-version: 'latest'
-      - run: npm install
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: latest
       - run: npm run vitest
         name: running unit tests
