@@ -1,5 +1,7 @@
 #!/usr/bin/env sh
 
+echo "test"
+
 forbidden_branches='main'
 current_branch=$(git branch --show-current)
 
