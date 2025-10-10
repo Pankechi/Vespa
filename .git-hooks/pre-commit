@@ -7,12 +7,12 @@ current_branch=$(git branch --show-current)
 
 for branch in $forbidden_branches; do
     if [ "$branch" = "$current_branch" ]; then
-        echo "❌Direct commits to main branch are forbidden"
+        echo "❌ Direct commits to main branch are forbidden"
         exit 1
     fi
 done
 
-echo "TypeScript started"
+echo "🔍 Starting type-check"
 npm run type-check
 if [ $? -ne 0 ]; then
     echo "❌Type errors were found"
