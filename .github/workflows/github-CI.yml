@@ -11,5 +11,5 @@ jobs:
           node-version: latest
       - run: npm install
         name: installing npm dependencies
-      - run: npm run vitest
+      - run: npm run test:unit
         name: running unit tests
