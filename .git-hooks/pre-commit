@@ -1,0 +1,19 @@
+#!/usr/bin/env sh
+
+forbidden_branches=('main')
+current_branch=$(git rev-parse --abbrev-ref HEAD)
+
+for branch in $forbidden_branches; do
+    if [$branch == $current_branch]; then
+        echo "direct commits to main branch are forbidden"
+        exit 1
+    if
+done
+
+echo "TypeScript started"
+npm run type-check
+
+if [$? -ne 0]; then
+    echo "Type errors was founded"
+    exit 1
+if
