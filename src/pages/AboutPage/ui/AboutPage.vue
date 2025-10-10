@@ -1,6 +1,4 @@
-<script setup lang="ts">
-  const a = 1
-</script>
+<script setup lang="ts"></script>
 
 <template>
   <div>ABOUT PAGE</div>
