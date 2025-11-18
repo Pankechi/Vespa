@@ -7,6 +7,9 @@ export default {
     'stylelint-config-recommended-scss',
     'stylelint-config-recommended-vue',
   ],
-  rules: {},
+  rules: {
+    'color-hex-length': false,
+    'no-empty-source': false,
+  },
   ignoreFiles: ['**/*.js', '**/*.ts', '**/*.jsx', '**/*.tsx'],
 };
