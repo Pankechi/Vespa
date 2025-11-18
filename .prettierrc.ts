@@ -1,13 +1,17 @@
-import { type Config } from 'prettier'
+import { type Config } from 'prettier';
 
 const config: Config = {
-  semi: false,
+  semi: true,
   tabWidth: 2,
   printWidth: 100,
   singleQuote: true,
-  trailingComma: 'none',
+  trailingComma: 'all',
   htmlWhitespaceSensitivity: 'ignore',
-  vueIndentScriptAndStyle: true
-}
+  vueIndentScriptAndStyle: true,
+  bracketSpacing: true,
+  bracketSameLine: false,
+  arrowParens: 'always',
+  endOfLine: 'lf',
+};
 
-export default config
+export default config;

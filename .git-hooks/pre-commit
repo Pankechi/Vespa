@@ -27,4 +27,7 @@ if [ $? -ne 0 ]; then
     exit 1
 fi
 
+echo "$init_icon Start linting"
+npm run lint-staged-files
+
 echo "$ok_icon changes were commited"
