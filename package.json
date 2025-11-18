@@ -13,7 +13,7 @@
     "test:unit": "vitest",
     "build-only": "vite build",
     "type-check": "vue-tsc --build",
-    "lint-eslint": "eslint -ext .vue,.js,.ts,.tsx,.jsx --ignore-pattern .gitignore",
+    "lint-eslint": "eslint --ext .ts,.tsx,.js,.jsx,.vue  --ignore-pattern .gitignore",
     "format": "prettier --write src/",
     "lint-stylelint": "stylelint \"src/**/*.{vue,scss}\"",
     "lint-staged-files": "lint-staged --config lint-staged.config.mjs",
