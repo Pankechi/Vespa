@@ -8,8 +8,8 @@ export default {
     'stylelint-config-recommended-vue',
   ],
   rules: {
-    'color-hex-length': false,
-    'no-empty-source': false,
+    'color-hex-length': null,
+    'no-empty-source': null,
   },
   ignoreFiles: ['**/*.js', '**/*.ts', '**/*.jsx', '**/*.tsx'],
 };
