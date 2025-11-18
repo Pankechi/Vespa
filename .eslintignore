@@ -1,6 +1,0 @@
-**/*.d.ts
-vitest.config.d.ts
-vite.config.d.ts
-dist/
-dist-ssr/
-coverage/
