@@ -13,9 +13,9 @@
     "test:unit": "vitest",
     "build-only": "vite build",
     "type-check": "vue-tsc --build",
-    "lint-eslint": "eslint . --fix",
+    "lint-eslint": "eslint -ext .vue, .js, .ts, .tsx, .jsx --ignore-pattern .gitignore",
     "format": "prettier --write src/",
-    "lint-stylelint": "stylelint \"src/**/*.{vue,scss}\" --fix",
+    "lint-stylelint": "stylelint \"src/**/*.{vue,scss}\"",
     "lint-staged-files": "lint-staged --config lint-staged.config.mjs",
     "prepare": "git config core.hooksPath .git-hooks || echo 'Not in a git repo'"
   },
