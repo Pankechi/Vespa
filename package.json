@@ -10,7 +10,7 @@
     "dev": "vite",
     "build": "run-p type-check \"build-only {@}\" --",
     "preview": "vite preview",
-    "test:unit": "vitest",
+    "test:unit": "VUE_DEVTOOLS_DISABLE=1 vitest",
     "build-only": "vite build",
     "type-check": "vue-tsc --build",
     "lint-eslint": "eslint . --ext .ts,.tsx,.vue --ignore-pattern \"**/*.d.ts\"",
