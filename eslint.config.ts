@@ -10,11 +10,10 @@ import skipFormatting from '@vue/eslint-config-prettier/skip-formatting';
 // More info at https://github.com/vuejs/eslint-config-typescript/#advanced-setup
 
 export default defineConfigWithVueTs(
-  { ignores: ['**/*.d.ts'] },
-
   {
     name: 'app/files-to-lint',
     files: ['**/*.{ts,mts,tsx,vue}'],
+    ignores: ['**/*.d.ts'],
   },
 
   globalIgnores(['**/dist/**', '**/dist-ssr/**', '**/coverage/**']),
