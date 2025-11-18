@@ -15,7 +15,7 @@
     "type-check": "vue-tsc --build",
     "lint": "eslint . --fix",
     "format": "prettier --write src/",
-    "ling-staged-files": "lint-staged --config lint-staged.config.mjs",
+    "lint-staged-files": "lint-staged --config lint-staged.config.mjs",
     "prepare": "git config core.hooksPath .git-hooks || echo 'Not in a git repo'"
   },
   "dependencies": {
