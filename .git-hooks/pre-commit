@@ -27,4 +27,11 @@ if [ $? -ne 0 ]; then
     exit 1
 fi
 
+echo "$init_icon Start linting"
+npm run lint-staged-files
+if [ $? -ne 0 ]; then
+    echo "$error_icon Lint errors were found"
+    exit 1
+fi
+
 echo "$ok_icon changes were commited"
