@@ -50,6 +50,7 @@ jobs:
     if: github.ref == 'refs/heads/main' && github.event_name == 'push'
 
     permissions:
+      contents: write
       pages: write
       id-token: write
 
@@ -58,10 +59,14 @@ jobs:
         uses: actions/download-artifact@v5
         with:
           name: dist
-          path: dist
+          path: ./dist
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
-          publish_dir: ./dist
           github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
+          publish_branch: gh-pages
+          force_orphan: true
+          keep_files: false
+          full_commit_message: "Deploy to GitHub Pages from ${GITHUB_SHA}"
