@@ -5,9 +5,6 @@ import viteConfig from './vite.config';
 export default mergeConfig(
   viteConfig,
   defineConfig({
-    define: {
-      __VUE_PROD_DEVTOOLS__: false,
-    },
     test: {
       environment: 'happy-dom',
       exclude: [...configDefaults.exclude, 'e2e/**'],
