@@ -13,6 +13,10 @@ export default defineConfigWithVueTs(
   globalIgnores(['**/dist/**', '**/dist-ssr/**', '**/coverage/**', '**/*.d.ts']),
 
   {
+    ignores: ['**/*.d.ts', 'vitest.config.d.ts'],
+  },
+
+  {
     name: 'app/files-to-lint',
     files: ['**/*.{ts,mts,tsx,vue}'],
   },
